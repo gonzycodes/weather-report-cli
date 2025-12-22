@@ -1,0 +1,1 @@
+## Only place where logging is defined, multiple levels and can be used by other modules

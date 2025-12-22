@@ -1,0 +1,1 @@
+## Clean functions (Input validation, formatting of forecast, converting API-data)

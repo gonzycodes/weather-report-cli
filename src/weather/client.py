@@ -1,0 +1,1 @@
+## Class that calls weather API, manages network errors and returns data in a consistent format
