@@ -2,6 +2,7 @@
 from pathlib import Path
 
 
+#Directories and files
 THIS_FILE = Path(__file__)
 
 WEATHER_DIR = THIS_FILE.parent
@@ -21,6 +22,7 @@ LOG_DIR = PROJECT_ROOT/'logs'
 LOG_FILE = LOG_DIR/'app.log'
 
 
+#Settings
 GEO_BASE_URL = '...'
 
 FORECAST_BASE_URL = '...'
@@ -33,7 +35,7 @@ FORECAST_HOURS = 24
 
 TIMEZONE_SETTING = 'auto'
 
-#Adjust this to change behavior 
+#Adjust this to change behavior, 'INFO' is recommended
 LOG_LEVEL_DEFAULT = 'INFO'
 
 def init_app_dirs():
