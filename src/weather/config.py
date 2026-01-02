@@ -1,4 +1,4 @@
-## All paths, all constants and responsible for where all folders are
+#Configuration for paths, constants and app initialization
 from pathlib import Path
 
 
@@ -38,6 +38,7 @@ TIMEZONE_SETTING = 'auto'
 #Adjust this to change behavior, 'INFO' is recommended
 LOG_LEVEL_DEFAULT = 'INFO'
 
+#Creates folders and files if they dont exist
 def init_app_dirs():
     paths = [DATA_DIR, CACHE_DIR, LOG_DIR]
     for p in paths:
