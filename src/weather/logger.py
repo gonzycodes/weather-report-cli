@@ -14,3 +14,23 @@ def setup_logger():
     logger.add(sys.stderr, level=LOG_LEVEL_DEFAULT, format=LOG_FORMAT)
     logger.add(LOG_FILE, rotation='1 day', retention='1 week', format=LOG_FORMAT)
     CONFIGURED = True
+
+def log_info(message):
+    setup_logger()
+    logger.info(message)
+
+def log_debug(message):
+    setup_logger()
+    logger.debug(message)
+
+def log_warning(message):
+    setup_logger()
+    logger.warning(message)
+
+def log_error(message):
+    setup_logger()
+    logger.error(message)
+
+def log_exception(message):
+    setup_logger()
+    logger.exception(message)
