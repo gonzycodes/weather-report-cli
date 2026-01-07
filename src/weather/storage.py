@@ -1,6 +1,6 @@
 import json
 from datetime import datetime as dt
-from .config import CACHE_DIR, CACHE_EXPIRY_MINUTES
+from .config import CACHE_DIR, CACHE_EXPIRY_MINUTES, HISTORY_FILE, HISTORY_LIMIT
 from .logger import log_info, log_exception
 ##  Read and Write JSON, cache, history, (no api code)
 def get_cache_path(lat, lon):
@@ -47,3 +47,28 @@ def load_cache(lat, lon):
     except Exception:
         log_exception('Load cache failed')
         return None
+    
+def read_history():
+    if not HISTORY_FILE.is_file():
+        log_info('No history file, returning empty list')
+        return []
+    try:
+        with open(HISTORY_FILE, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            if isinstance(data, list):
+                return data
+            else:
+                return []
+    except Exception:
+        log_exception('Failed to load json, returning empty list')
+        return []
+
+def append_history(entry):
+    history = read_history()
+    history.append(entry)
+    if len(history) > HISTORY_LIMIT:
+        history = history[-HISTORY_LIMIT:]
+    HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(HISTORY_FILE, 'w', encoding='utf-8') as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+        log_info('History appended!')
