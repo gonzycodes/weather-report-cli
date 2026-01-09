@@ -36,6 +36,7 @@ cd src
 python -m app
 
 ## File structure
+```plaintext
 weather-report-cli/
 ├── README.md
 ├── requirements.txt
@@ -61,5 +62,5 @@ weather-report-cli/
 │   └── app.log
 │
 └── .venv/                   
-
+```
 
