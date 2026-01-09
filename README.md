@@ -16,24 +16,24 @@ The purpose of the project is to showcase clear project structure, an isolated e
 
 # Installation
 ## Clone repository
-git clone https://github.com/YOUR_USERNAME/weather-report-cli.git
-cd weather-report-report-cli
+- git clone https://github.com/YOUR_USERNAME/weather-report-cli.git
+- cd weather-report-report-cli
 ## Create and activate venv
-python -m venv .venv
-source .venv/bin/activate - (May wary depending on OS)
+- python -m venv .venv
+- source .venv/bin/activate - (May wary depending on OS)
 ## Dependencies
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 # API Key Setup
-Create free api at openweather.org
-Add your api in
-module: src/weather/config.py
-line: OPENWEATHER_API_KEY = '...'
+- Create free api at openweather.org
+- Add your api in
+- module: src/weather/config.py
+- line: OPENWEATHER_API_KEY = '...'
 
 # Running the application
-From project root do:
-cd src
-python -m app
+- From project root do:
+- cd src
+- python -m app
 
 ## File structure
 ```plaintext
