@@ -2,7 +2,30 @@ import json
 from datetime import datetime as dt
 from .config import CACHE_DIR, CACHE_EXPIRY_MINUTES, HISTORY_FILE, HISTORY_LIMIT
 from .logger import log_info, log_exception
-##  Read and Write JSON, cache, history, (no api code)
+
+class HistoryEntry:
+    def __init__(self, timestamp: str, query: str, name: str, country: str, lat: float, lon: float, action: str, source: str,) -> None:
+        self.timestamp = timestamp
+        self.query = query
+        self.name = name
+        self.country = country
+        self.lat = lat
+        self.lon = lon
+        self.action = action
+        self.source = source
+
+    def to_dict(self) -> dict:
+        return {
+            "timestamp": self.timestamp,
+            "query": self.query,
+            "name": self.name,
+            "country": self.country,
+            "lat": self.lat,
+            "lon": self.lon,
+            "action": self.action,
+            "source": self.source,
+        }
+
 def get_cache_path(lat, lon):
     rounded_lat = round(float(lat), 3)
     rounded_lon = round(float(lon), 3)
