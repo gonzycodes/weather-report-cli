@@ -23,9 +23,9 @@ LOG_FILE = LOG_DIR/'app.log'
 
 
 #Settings
-GEO_BASE_URL = '...'
+GEO_BASE_URL = 'http://api.openweathermap.org/geo/1.0/direct'
 
-FORECAST_BASE_URL = '...'
+FORECAST_BASE_URL = 'http://api.openweathermap.org/data/2.5/forecast'
 
 CACHE_EXPIRY_MINUTES = 10
 
@@ -35,14 +35,14 @@ FORECAST_HOURS = 24
 
 TIMEZONE_SETTING = 'auto'
 
-OPENWEATHER_API_KEY = 'PUT_YOUR_API_KEY_HERE'
+OPENWEATHER_API_KEY = '725d46370f76ce3c31c8826950488f01'
 
 #Adjust this to change behavior, 'INFO' is recommended
 LOG_LEVEL_DEFAULT = 'INFO'
 
-UNITS = 'PUT_YOUR_UNIT_SYSTEM_HERE #metric #imperial'
+UNITS = 'metric'
 
-LANGUAGE = 'PUT_YOUR_LANGUAGE_HERE #eng #sv'
+LANGUAGE = 'eng'
 
 #Creates folders and files if they dont exist
 def init_app_dirs():

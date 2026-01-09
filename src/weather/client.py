@@ -1,4 +1,3 @@
-## Class that calls weather API, manages network errors and returns data in a consistent format
 import requests
 from .config import GEO_BASE_URL, OPENWEATHER_API_KEY, UNITS, LANGUAGE, FORECAST_BASE_URL
 from .logger import log_info
@@ -13,6 +12,7 @@ def geocode_city(city):
         return None
     first = data[0]
     return first.get('lat'), first.get('lon'), first.get('name'), first.get('country')
+
 
 def fetch_forecast(lat, lon):
     params = {'lat': lat, 'lon': lon, 'appid': OPENWEATHER_API_KEY, 'units': UNITS, 'lang': LANGUAGE}
