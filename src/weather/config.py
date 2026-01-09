@@ -35,8 +35,7 @@ FORECAST_HOURS = 24
 
 TIMEZONE_SETTING = 'auto'
 
-#Adjust this to change behavior, 'INFO' is recommended
-LOG_LEVEL_DEFAULT = 'INFO'
+OPENWEATHER_API_KEY = 'PUT_YOUR_API_KEY_HERE'
 
 #Creates folders and files if they dont exist
 def init_app_dirs():
